@@ -1,0 +1,27 @@
+PODS:
+  - EasyMapping (0.5.4)
+  - EasyMappingKit (0.0.1)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
+  - Mantle (1.4):
+    - Mantle/extobjc
+  - Mantle/extobjc (1.4)
+
+DEPENDENCIES:
+  - EasyMapping (~> 0.5.4)
+  - EasyMappingKit (from `https://github.com/poteryaysya/EasyMappingKit.git`)
+  - MagicalRecord (~> 2.2)
+  - Mantle (~> 1.4)
+
+EXTERNAL SOURCES:
+  EasyMappingKit:
+    :git: https://github.com/poteryaysya/EasyMappingKit.git
+
+SPEC CHECKSUMS:
+  EasyMapping: 4dd1e539994b80c8414d60e9a172828fb1ec7b81
+  EasyMappingKit: 243c7a582db3ad89b84de5384d5c9a40448b674a
+  MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
+  Mantle: de026e86c183c5adfd453c1d8419babb787fea97
+
+COCOAPODS: 0.29.0
