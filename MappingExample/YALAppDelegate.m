@@ -72,9 +72,12 @@
 
 	CFTimeInterval before = CFAbsoluteTimeGetCurrent();
 
-    [Person MR_importFromArray:JSON inContext:context];
+//    [Person MR_importFromArray:JSON inContext:context];
 
-
+//    [EKMapper arrayOfObjectsFromExternalRepresentation:JSON
+//                                           withMapping:[MappingProvider personWithPhonesMappingOriginal]
+//                                inManagedObjectContext:context];
+//    
 //	[EMKManagedObjectDeserializer deserializeCollectionExternalRepresentation:JSON
 //	                                                             usingMapping:[MappingProvider personWithPhonesMapping]
 //				                                                      context:context];

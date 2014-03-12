@@ -17,8 +17,9 @@
 		2C18D8B618CF749F00B7E937 /* YALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C18D8B518CF749F00B7E937 /* YALAppDelegate.m */; };
 		2C18D8B818CF749F00B7E937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C18D8B718CF749F00B7E937 /* Images.xcassets */; };
 		69ED702618773EB99C770271 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED751878EA82B7DD119FF8 /* MappingProvider.m */; };
+		69ED707A60A412352A922B82 /* PhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED7814085D864F631A4F72 /* PhoneModel.m */; };
 		69ED7664A186CC575B30A21F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED789B51E8FE8F2FF231D8 /* Person.m */; };
-		69ED77A53026A0017F0B52B7 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED73694E522C227D1FC92E /* Car.m */; };
+		69ED7753AE18732D17C5C6A2 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED78102BB436310FD03A0B /* PersonModel.m */; };
 		69ED78E00760B227E7AB88B0 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED77D5F95D01B146E651A5 /* Phone.m */; };
 		EF8CA7C70838494CB738290D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C861BB3D0413180CFFDAE /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -39,12 +40,14 @@
 		2C18D8B718CF749F00B7E937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C18D8BE18CF749F00B7E937 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		69ED70425CE2582B5EF4A576 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		69ED73694E522C227D1FC92E /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		69ED71091E49224728EBCF55 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
 		69ED751878EA82B7DD119FF8 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
-		69ED756B950AED0E138F39D8 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		69ED7676688C628BBB45F802 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		69ED77D5F95D01B146E651A5 /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
+		69ED78102BB436310FD03A0B /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		69ED7814085D864F631A4F72 /* PhoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneModel.m; sourceTree = "<group>"; };
 		69ED789B51E8FE8F2FF231D8 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		69ED79D8718A119F5DDBC9D5 /* PhoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneModel.h; sourceTree = "<group>"; };
 		69ED7F13D9952ABA760F3F91 /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
 		879C861BB3D0413180CFFDAE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E75834D10841F2AA221B9B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -120,6 +123,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		69ED7492A10CE87EB93CE8AE /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				69ED78102BB436310FD03A0B /* PersonModel.m */,
+				69ED71091E49224728EBCF55 /* PersonModel.h */,
+				69ED7814085D864F631A4F72 /* PhoneModel.m */,
+				69ED79D8718A119F5DDBC9D5 /* PhoneModel.h */,
+			);
+			path = Mantle;
+			sourceTree = "<group>";
+		};
 		69ED78C9D19B97FD8D5AD619 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +144,7 @@
 				69ED751878EA82B7DD119FF8 /* MappingProvider.m */,
 				69ED789B51E8FE8F2FF231D8 /* Person.m */,
 				69ED70425CE2582B5EF4A576 /* Person.h */,
-				69ED73694E522C227D1FC92E /* Car.m */,
-				69ED756B950AED0E138F39D8 /* Car.h */,
+				69ED7492A10CE87EB93CE8AE /* Mantle */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,7 +254,8 @@
 				69ED78E00760B227E7AB88B0 /* Phone.m in Sources */,
 				69ED702618773EB99C770271 /* MappingProvider.m in Sources */,
 				69ED7664A186CC575B30A21F /* Person.m in Sources */,
-				69ED77A53026A0017F0B52B7 /* Car.m in Sources */,
+				69ED7753AE18732D17C5C6A2 /* PersonModel.m in Sources */,
+				69ED707A60A412352A922B82 /* PhoneModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
