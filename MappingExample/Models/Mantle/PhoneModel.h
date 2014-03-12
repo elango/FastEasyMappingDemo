@@ -9,6 +9,11 @@
 
 @interface PhoneModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
+@property (nonatomic, retain) NSNumber * phoneID;
+@property (nonatomic, retain) NSString * ddi;
+@property (nonatomic, retain) NSString * ddd;
+@property (nonatomic, retain) NSString * number;
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey;
 
 + (NSString *)managedObjectEntityName;

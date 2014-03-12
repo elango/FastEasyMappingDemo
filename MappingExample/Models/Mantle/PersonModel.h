@@ -9,6 +9,11 @@
 
 @interface PersonModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
+@property (nonatomic, retain) NSNumber * personID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * email;
+@property (nonatomic, retain) NSSet *phones;
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey;
 
 + (NSString *)managedObjectEntityName;

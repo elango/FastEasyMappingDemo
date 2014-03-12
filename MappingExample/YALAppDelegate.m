@@ -13,6 +13,7 @@
 #import "MappingProvider.h"
 #import "Person.h"
 #import "NSManagedObject+MagicalDataImport.h"
+#import "PersonModel.h"
 
 @implementation YALAppDelegate
 
@@ -71,16 +72,33 @@
 	NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
 
 	CFTimeInterval before = CFAbsoluteTimeGetCurrent();
-
+	// MagicalRecord
 //    [Person MR_importFromArray:JSON inContext:context];
 
+	// Mantle
+	for (id representation in JSON) {
+        @autoreleasepool {
+            PersonModel *model = [MTLJSONAdapter modelOfClass:PersonModel.class
+                                           fromJSONDictionary:representation
+                                                        error:NULL];
+            [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:context error:NULL];
+        }
+	}
+
+	// EasyMapping
 //    [EKMapper arrayOfObjectsFromExternalRepresentation:JSON
 //                                           withMapping:[MappingProvider personWithPhonesMappingOriginal]
 //                                inManagedObjectContext:context];
-//    
+
+
+
+	// EasyMappingKit (our fork)
 //	[EMKManagedObjectDeserializer deserializeCollectionExternalRepresentation:JSON
 //	                                                             usingMapping:[MappingProvider personWithPhonesMapping]
 //				                                                      context:context];
+
+    
+
 
 	[context save:NULL];
 

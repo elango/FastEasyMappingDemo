@@ -7,26 +7,44 @@
 //
 #import "PersonModel.h"
 
+#import "PhoneModel.h"
+
 @implementation PersonModel
 
 #pragma mark - MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-	return nil;
+	return @{
+		@"personID": @"id",
+	    @"name": @"name",
+	    @"email": @"email",
+	    @"phones": @"phones",
+	};
 }
 
 #pragma mark - MTLManagedObjectSerializing
 
 + (NSString *)managedObjectEntityName {
-	return nil;
+	return @"Person";
 }
 
 + (NSDictionary *)managedObjectKeysByPropertyKey {
-	return nil;
+	return @{
+		@"personID": @"personID",
+	    @"name": @"name",
+	    @"email": @"email",
+	    @"phones": @"phones"
+	};
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing {
-	return nil;
+	return [NSSet setWithObject:@"personID"];
+}
+
+#pragma mark -
+
++ (NSValueTransformer *)phonesJSONTransformer {
+	return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:PhoneModel.class];
 }
 
 @end

@@ -12,21 +12,31 @@
 #pragma mark - MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-	return nil;
+	return @{
+		@"phoneID": @"id",
+		@"ddi": @"ddi",
+		@"ddd": @"ddd",
+		@"number": @"number",
+	};
 }
 
 #pragma mark - MTLManagedObjectSerializing
 
 + (NSString *)managedObjectEntityName {
-	return nil;
+	return @"Phone";
 }
 
 + (NSDictionary *)managedObjectKeysByPropertyKey {
-	return nil;
+	return @{
+		@"phoneID": @"phoneID",
+		@"ddi": @"ddi",
+		@"ddd": @"ddd",
+		@"number": @"number",
+	};
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing {
-	return nil;
+	return [NSSet setWithObject:@"phoneID"];
 }
 
 @end
