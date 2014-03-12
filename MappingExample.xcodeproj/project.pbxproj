@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C11899518D0799C005D8D91 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C11899418D0799C005D8D91 /* CoreData.framework */; };
+		2C11899B18D07B3D005D8D91 /* EasyMappingCoreDataExample.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2C11899A18D07B3D005D8D91 /* EasyMappingCoreDataExample.xcdatamodel */; };
 		2C18D8A618CF749F00B7E937 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18D8A518CF749F00B7E937 /* Foundation.framework */; };
 		2C18D8A818CF749F00B7E937 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18D8A718CF749F00B7E937 /* CoreGraphics.framework */; };
 		2C18D8AA18CF749F00B7E937 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18D8A918CF749F00B7E937 /* UIKit.framework */; };
@@ -18,11 +20,12 @@
 		69ED7664A186CC575B30A21F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED789B51E8FE8F2FF231D8 /* Person.m */; };
 		69ED77A53026A0017F0B52B7 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED73694E522C227D1FC92E /* Car.m */; };
 		69ED78E00760B227E7AB88B0 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED77D5F95D01B146E651A5 /* Phone.m */; };
-		69ED7ACDE5AF31F0AFE3BA12 /* MappingExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69ED71C2A6F0D4F3619C2D7E /* MappingExample.xcdatamodeld */; };
 		EF8CA7C70838494CB738290D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 879C861BB3D0413180CFFDAE /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C11899418D0799C005D8D91 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2C11899A18D07B3D005D8D91 /* EasyMappingCoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyMappingCoreDataExample.xcdatamodel; sourceTree = "<group>"; };
 		2C18D8A218CF749F00B7E937 /* MappingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MappingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18D8A518CF749F00B7E937 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C18D8A718CF749F00B7E937 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C11899518D0799C005D8D91 /* CoreData.framework in Frameworks */,
 				2C18D8A818CF749F00B7E937 /* CoreGraphics.framework in Frameworks */,
 				2C18D8AA18CF749F00B7E937 /* UIKit.framework in Frameworks */,
 				2C18D8A618CF749F00B7E937 /* Foundation.framework in Frameworks */,
@@ -83,6 +87,7 @@
 		2C18D8A418CF749F00B7E937 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C11899418D0799C005D8D91 /* CoreData.framework */,
 				2C18D8A518CF749F00B7E937 /* Foundation.framework */,
 				2C18D8A718CF749F00B7E937 /* CoreGraphics.framework */,
 				2C18D8A918CF749F00B7E937 /* UIKit.framework */,
@@ -118,12 +123,12 @@
 		69ED78C9D19B97FD8D5AD619 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C11899A18D07B3D005D8D91 /* EasyMappingCoreDataExample.xcdatamodel */,
 				69ED7F13D9952ABA760F3F91 /* Phone.h */,
 				69ED7676688C628BBB45F802 /* MappingProvider.h */,
 				69ED77D5F95D01B146E651A5 /* Phone.m */,
 				69ED751878EA82B7DD119FF8 /* MappingProvider.m */,
 				69ED789B51E8FE8F2FF231D8 /* Person.m */,
-				69ED71C2A6F0D4F3619C2D7E /* MappingExample.xcdatamodeld */,
 				69ED70425CE2582B5EF4A576 /* Person.h */,
 				69ED73694E522C227D1FC92E /* Car.m */,
 				69ED756B950AED0E138F39D8 /* Car.h */,
@@ -173,8 +178,6 @@
 			mainGroup = 2C18D89918CF749F00B7E937;
 			productRefGroup = 2C18D8A318CF749F00B7E937 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				2C18D8A118CF749F00B7E937 /* MappingExample */,
@@ -234,10 +237,10 @@
 			files = (
 				2C18D8B218CF749F00B7E937 /* main.m in Sources */,
 				2C18D8B618CF749F00B7E937 /* YALAppDelegate.m in Sources */,
+				2C11899B18D07B3D005D8D91 /* EasyMappingCoreDataExample.xcdatamodel in Sources */,
 				69ED78E00760B227E7AB88B0 /* Phone.m in Sources */,
 				69ED702618773EB99C770271 /* MappingProvider.m in Sources */,
 				69ED7664A186CC575B30A21F /* Person.m in Sources */,
-				69ED7ACDE5AF31F0AFE3BA12 /* MappingExample.xcdatamodeld in Sources */,
 				69ED77A53026A0017F0B52B7 /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,16 +378,9 @@
 				2C18D8D018CF749F00B7E937 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		69ED71C2A6F0D4F3619C2D7E /* MappingExample.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			path = MappingExample.xcdatamodeld;
-			sourceTree = "<group>";
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2C18D89A18CF749F00B7E937 /* Project object */;
 }

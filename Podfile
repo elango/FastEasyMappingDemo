@@ -1,7 +1,9 @@
 platform :ios, '7.0'
 inhibit_all_warnings!
 
-pod "MagicalRecord", "~> 2.2"
+#Verions with fixed import in +[NSManagedObject MR_importFromArray:inContext:] - Instead of async import sync is used.
+#Since original version perform async import and return in sync way result of import, which is empty.
+pod "MagicalRecord", :path => "./External/MagicalRecord-master/"
 
 #MagicalRecord fork
 #pod "MagicalRecord", "~> 2.2", :git => "https://github.com/seepel/MagicalRecord.git"
