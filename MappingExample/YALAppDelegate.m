@@ -8,42 +8,94 @@
 
 #import "YALAppDelegate.h"
 
+#import "MagicalRecord+Setup.h"
+#import "NSManagedObjectContext+MagicalRecord.h"
+#import "MappingProvider.h"
+#import "Person.h"
+#import "NSManagedObject+MagicalDataImport.h"
+
 @implementation YALAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (void)setupCoreData {
+	[MagicalRecord setupAutoMigratingCoreDataStack];
+}
+
+- (NSArray *)generateJSON {
+	NSMutableArray *output = [NSMutableArray array];
+	for (NSUInteger index = 0; index < 500; index++) {
+		NSDictionary *person = @{
+			@"id": @(index),
+			@"name": [NSString stringWithFormat:@"name %ld", (long)index],
+			@"email": [NSString stringWithFormat:@"%ld@email.com", (long)index],
+			@"phones": @[
+				@{
+					@"id": @(index * 5 + 0),
+					@"number": @"11111",
+					@"ddi": @"ddivalue",
+					@"ddd": @"dddvalue",
+				},
+				@{
+					@"id": @(index * 5 + 1),
+					@"number": @"11111",
+					@"ddi": @"ddivalue",
+					@"ddd": @"dddvalue",
+				},
+				@{
+					@"id": @(index * 5 + 2),
+					@"number": @"11111",
+					@"ddi": @"ddivalue",
+					@"ddd": @"dddvalue",
+				},
+				@{
+					@"id": @(index * 5 + 3),
+					@"number": @"11111",
+					@"ddi": @"ddivalue",
+					@"ddd": @"dddvalue",
+				},
+				@{
+					@"id": @(index * 5 + 4),
+					@"number": @"11111",
+					@"ddi": @"ddivalue",
+					@"ddd": @"dddvalue",
+				},
+			],
+		};
+
+		[output addObject:person];
+	}
+
+	return output;
+}
+
+- (void)importJSON:(NSArray *)JSON {
+	NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
+
+	CFTimeInterval before = CFAbsoluteTimeGetCurrent();
+
+    [Person MR_importFromArray:JSON inContext:context];
+
+
+//	[EMKManagedObjectDeserializer deserializeCollectionExternalRepresentation:JSON
+//	                                                             usingMapping:[MappingProvider personWithPhonesMapping]
+//				                                                      context:context];
+
+	[context save:NULL];
+
+	CFTimeInterval after = CFAbsoluteTimeGetCurrent() - before;
+
+	NSLog(@"It takes: %f", after);
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[self setupCoreData];
+
+	[self importJSON:[self generateJSON]];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+	[self.window setRootViewController:[UIViewController new]];
     [self.window makeKeyAndVisible];
-    return YES;
-}
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+	return YES;
 }
 
 @end
