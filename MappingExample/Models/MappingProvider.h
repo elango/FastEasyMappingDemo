@@ -12,7 +12,9 @@
 
 @interface MappingProvider : NSObject
 
-+ (EMKManagedObjectMapping *)carMapping;
++ (EKManagedObjectMapping *)phoneMappingOriginal;
++ (EKManagedObjectMapping *)personWithPhonesMappingOriginal;
+
 + (EMKManagedObjectMapping *)phoneMapping;
 + (EMKManagedObjectMapping *)personWithPhonesMapping;
 

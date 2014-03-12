@@ -10,12 +10,28 @@
 
 @implementation MappingProvider
 
-+ (EMKManagedObjectMapping *)carMapping {
-	return [EMKManagedObjectMapping mappingForEntityName:@"Car" configuration:^(EMKManagedObjectMapping *mapping) {
-		[mapping setPrimaryKey:@"carID"];
-		[mapping addAttributeMappingDictionary:@{@"carID" : @"id"}];
-		[mapping addAttributeMappingFromArray:@[@"model", @"year"]];
-	}];
+
++ (EKManagedObjectMapping *)phoneMappingOriginal
+{
+    return [EKManagedObjectMapping mappingForEntityName:@"Phone" withBlock:^(EKManagedObjectMapping *mapping) {
+        [mapping mapFieldsFromDictionary:@{ @"id": @"phoneID" }];
+        [mapping mapFieldsFromArray:@[@"number"]];
+        [mapping mapFieldsFromDictionary:@{
+                                           @"ddi" : @"ddi",
+                                           @"ddd" : @"ddd"
+                                           }];
+        mapping.primaryKey = @"phoneID";
+    }];
+}
+
++ (EKManagedObjectMapping *)personWithPhonesMappingOriginal
+{
+    return [EKManagedObjectMapping mappingForEntityName:@"Person" withBlock:^(EKManagedObjectMapping *mapping) {
+        [mapping mapFieldsFromDictionary:@{ @"id": @"personID" }];
+        [mapping mapFieldsFromArray:@[@"name", @"email"]];
+        [mapping hasManyMapping:[self phoneMappingOriginal] forKey:@"phones"];
+        mapping.primaryKey = @"personID";
+    }];
 }
 
 + (EMKManagedObjectMapping *)phoneMapping {

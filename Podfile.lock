@@ -9,19 +9,19 @@ PODS:
 DEPENDENCIES:
   - EasyMapping (~> 0.5.4)
   - EasyMappingKit (from `https://github.com/Yalantis/EasyMappingKit.git`)
-  - MagicalRecord (from `./External/MagicalRecord-master/`)
+  - MagicalRecord (from `https://github.com/seepel/MagicalRecord.git`)
   - Mantle (~> 1.4)
 
 EXTERNAL SOURCES:
   EasyMappingKit:
     :git: https://github.com/Yalantis/EasyMappingKit.git
   MagicalRecord:
-    :path: ./External/MagicalRecord-master/
+    :git: https://github.com/seepel/MagicalRecord.git
 
 SPEC CHECKSUMS:
   EasyMapping: 4dd1e539994b80c8414d60e9a172828fb1ec7b81
   EasyMappingKit: d83891053916ad23cdeffb33732b56f63adc0941
-  MagicalRecord: 92bb45db4b4abe4d10aa5becfb0babeba527f7ae
+  MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
   Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
 
 COCOAPODS: 0.29.0
