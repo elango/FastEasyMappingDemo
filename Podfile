@@ -10,4 +10,4 @@ pod "MagicalRecord", :git => "https://github.com/seepel/MagicalRecord.git"
 
 pod "Mantle", "~> 1.4"
 pod "EasyMapping", "~> 0.5.4"
-pod "EasyMappingKit", :git => "https://github.com/Yalantis/EasyMappingKit.git"
+pod "FastEasyMapping", :git => "https://github.com/Yalantis/FastEasyMapping.git"

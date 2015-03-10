@@ -16,5 +16,5 @@
 	#import <MagicalRecord/MagicalRecord.h>
 	#import <Mantle/Mantle.h>
 	#import <EasyMapping/EasyMapping.h>
-	#import <EasyMappingKit/EasyMappingKit.h>
+	#import <FastEasyMapping/FastEasyMapping.h>
 #endif

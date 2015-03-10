@@ -15,6 +15,8 @@
 #import "NSManagedObject+MagicalDataImport.h"
 #import "PersonModel.h"
 
+#import "EKManagedObjectMapper.h"
+
 @implementation YALAppDelegate
 
 - (void)setupCoreData {
@@ -73,29 +75,29 @@
 
 	CFTimeInterval before = CFAbsoluteTimeGetCurrent();
 	// MagicalRecord
-//    [Person MR_importFromArray:JSON inContext:context];
+//   [Person MR_importFromArray:JSON inContext:context];
 
 	// Mantle
-	for (id representation in JSON) {
-        @autoreleasepool {
-            PersonModel *model = [MTLJSONAdapter modelOfClass:PersonModel.class
-                                           fromJSONDictionary:representation
-                                                        error:NULL];
-            [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:context error:NULL];
-        }
-	}
+//	for (id representation in JSON) {
+//        @autoreleasepool {
+//            PersonModel *model = [MTLJSONAdapter modelOfClass:PersonModel.class
+//                                           fromJSONDictionary:representation
+//                                                        error:NULL];
+//            [MTLManagedObjectAdapter managedObjectFromModel:model insertingIntoContext:context error:NULL];
+//        }
+//	}
 
-	// EasyMapping
-//    [EKMapper arrayOfObjectsFromExternalRepresentation:JSON
+//	// EasyMapping
+//    [EKManagedObjectMapper arrayOfObjectsFromExternalRepresentation:JSON
 //                                           withMapping:[MappingProvider personWithPhonesMappingOriginal]
 //                                inManagedObjectContext:context];
 
 
 
 	// EasyMappingKit (our fork)
-//	[EMKManagedObjectDeserializer deserializeCollectionExternalRepresentation:JSON
-//	                                                             usingMapping:[MappingProvider personWithPhonesMapping]
-//				                                                      context:context];
+	[FEMManagedObjectDeserializer deserializeCollectionExternalRepresentation:JSON
+	                                                             usingMapping:[MappingProvider personWithPhonesMapping]
+				                                                      context:context];
 
     
 

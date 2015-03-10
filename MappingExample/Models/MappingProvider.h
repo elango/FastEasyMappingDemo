@@ -15,7 +15,7 @@
 + (EKManagedObjectMapping *)phoneMappingOriginal;
 + (EKManagedObjectMapping *)personWithPhonesMappingOriginal;
 
-+ (EMKManagedObjectMapping *)phoneMapping;
-+ (EMKManagedObjectMapping *)personWithPhonesMapping;
++ (FEMManagedObjectMapping *)phoneMapping;
++ (FEMManagedObjectMapping *)personWithPhonesMapping;
 
 @end

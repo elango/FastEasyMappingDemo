@@ -1,27 +1,35 @@
 PODS:
-  - EasyMapping (0.5.4)
-  - EasyMappingKit (0.1)
+  - EasyMapping (0.5.7)
+  - FastEasyMapping (0.5.1)
   - MagicalRecord (2.2)
-  - Mantle (1.4.1):
-    - Mantle/extobjc
-  - Mantle/extobjc (1.4.1)
+  - Mantle (1.5.4):
+    - Mantle/extobjc (= 1.5.4)
+  - Mantle/extobjc (1.5.4)
 
 DEPENDENCIES:
   - EasyMapping (~> 0.5.4)
-  - EasyMappingKit (from `https://github.com/Yalantis/EasyMappingKit.git`)
+  - FastEasyMapping (from `https://github.com/Yalantis/FastEasyMapping.git`)
   - MagicalRecord (from `https://github.com/seepel/MagicalRecord.git`)
   - Mantle (~> 1.4)
 
 EXTERNAL SOURCES:
-  EasyMappingKit:
-    :git: https://github.com/Yalantis/EasyMappingKit.git
+  FastEasyMapping:
+    :git: https://github.com/Yalantis/FastEasyMapping.git
   MagicalRecord:
     :git: https://github.com/seepel/MagicalRecord.git
 
-SPEC CHECKSUMS:
-  EasyMapping: 4dd1e539994b80c8414d60e9a172828fb1ec7b81
-  EasyMappingKit: d83891053916ad23cdeffb33732b56f63adc0941
-  MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
-  Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
+CHECKOUT OPTIONS:
+  FastEasyMapping:
+    :commit: 354273e47219f0abe7d83ba0c29c8edb75994b2f
+    :git: https://github.com/Yalantis/FastEasyMapping.git
+  MagicalRecord:
+    :commit: 2d5fb8e5ba317fe7a30e854b46e654bad5ec5647
+    :git: https://github.com/seepel/MagicalRecord.git
 
-COCOAPODS: 0.29.0
+SPEC CHECKSUMS:
+  EasyMapping: 209c65e47230ca3281d33a73d57706d6da8c875c
+  FastEasyMapping: 42cbb5e49e03f0ee5d7af7edb68bfbb81e0b3137
+  MagicalRecord: 565156bae4de961860fad200a5c52e21e7933ebe
+  Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
+
+COCOAPODS: 0.35.0

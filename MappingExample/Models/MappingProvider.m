@@ -7,6 +7,7 @@
 //
 
 #import "MappingProvider.h"
+#import <FEMManagedObjectMapping.h>
 
 @implementation MappingProvider
 
@@ -34,20 +35,20 @@
     }];
 }
 
-+ (EMKManagedObjectMapping *)phoneMapping {
-	return [EMKManagedObjectMapping mappingForEntityName:@"Phone" configuration:^(EMKManagedObjectMapping *mapping) {
++ (FEMManagedObjectMapping *)phoneMapping {
+	return [FEMManagedObjectMapping mappingForEntityName:@"Phone" configuration:^(FEMManagedObjectMapping *mapping) {
 		[mapping setPrimaryKey:@"phoneID"];
-		[mapping addAttributeMappingDictionary:@{@"phoneID" : @"id"}];
-		[mapping addAttributeMappingFromArray:@[@"number", @"ddd", @"ddi"]];
+		[mapping addAttributesFromDictionary:@{@"phoneID" : @"id"}];
+		[mapping addAttributesFromArray:@[@"number", @"ddd", @"ddi"]];
 	}];
 }
 
-+ (EMKManagedObjectMapping *)personWithPhonesMapping {
-	return [EMKManagedObjectMapping mappingForEntityName:@"Person" configuration:^(EMKManagedObjectMapping *mapping) {
++ (FEMManagedObjectMapping *)personWithPhonesMapping {
+	return [FEMManagedObjectMapping mappingForEntityName:@"Person" configuration:^(FEMManagedObjectMapping *mapping) {
 		[mapping setPrimaryKey:@"personID"];
-		[mapping addAttributeMappingDictionary:@{@"personID": @"id"}];
-		[mapping addAttributeMappingFromArray:@[@"name", @"email"]];
-		[mapping addToManyRelationshipMapping:[self phoneMapping] forProperty:@"phones" keyPath:@"phones"];
+		[mapping addAttributesFromDictionary:@{@"personID": @"id"}];
+		[mapping addAttributesFromArray:@[@"name", @"email"]];
+        [mapping addToManyRelationshipMapping:[self phoneMapping] forProperty:@"phones" keyPath:@"phones"];
 	}];
 }
 
